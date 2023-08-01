@@ -3,7 +3,7 @@ import connectMongoDb from "../../../libs/mongoDb";
 import Todo from "../../../models/todo.model";
 
 /* POST A TODO */
-export async function POST(req) {
+export async function POST(req: Request) {
   try {
     const { text, status } = await req.json();
     await connectMongoDb();

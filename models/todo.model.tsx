@@ -1,6 +1,11 @@
 import mongoose, { Schema } from "mongoose";
 
-const todoSchema = new Schema(
+interface Todo {
+  text: string;
+  status: boolean;
+}
+
+const todoSchema = new mongoose.Schema<Todo>(
   {
     text: {
       type: String,

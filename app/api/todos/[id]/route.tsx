@@ -3,7 +3,7 @@ import connectMongoDb from "../../../../libs/mongoDb";
 import Todo from "../../../../models/todo.model";
 
 /*GET A SINGLE TODO */
-export async function GET(req, { params }) {
+export async function GET(req: Request, { params }: { params: any }) {
   try {
     const { id } = params;
 
@@ -26,7 +26,7 @@ export async function GET(req, { params }) {
 }
 
 /* UPDATE TODO */
-export async function PUT(req, { params }) {
+export async function PUT(req: Request, { params }: { params: any }) {
   try {
     const { id } = params;
     const { text, status } = await req.json();
@@ -47,7 +47,7 @@ export async function PUT(req, { params }) {
 }
 
 /* DELETE TODO */
-export async function DELETE(req, { params }) {
+export async function DELETE(req: Request, { params }: { params: any }) {
   try {
     const { id } = params;
     if (!id) {
