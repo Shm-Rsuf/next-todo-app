@@ -1,6 +1,11 @@
+import TodoList from "@/components/TodoList";
 import style from "./style.module.scss";
 const HomePage = () => {
-  return <div style={{ color: style.primaryColor }}>HomePage</div>;
+  return (
+    <main style={{ color: style.primaryColor }}>
+      <TodoList />
+    </main>
+  );
 };
 
 export default HomePage;

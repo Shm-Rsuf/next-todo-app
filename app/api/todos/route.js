@@ -25,7 +25,7 @@ export async function GET() {
     if (!todos) {
       return NextResponse.json({ message: "Todos not found" }, { status: 404 });
     }
-    return NextResponse.json({ todos }, { status: 200 });
+    return NextResponse.json(todos, { status: 200 });
   } catch (error) {
     return NextResponse.json(
       { message: "Internal server error" },
