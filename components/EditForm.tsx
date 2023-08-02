@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import design from "../app/sass/editTodo.module.scss";
 
 const EditForm = ({ todo }: { todo: any }) => {
   const [text, setText] = useState(todo?.text);
@@ -24,14 +25,17 @@ const EditForm = ({ todo }: { todo: any }) => {
   };
 
   return (
-    <section onSubmit={handelEditSubmit}>
-      <form>
+    <section className={design.edit_container}>
+      <form onSubmit={handelEditSubmit} className={design.form_container}>
         <input
           onChange={(e) => setText(e.target.value)}
           type="text"
           value={text}
+          className={design.input_container}
         />
-        <button type="submit">Update Todo</button>
+        <button className={design.btn_container} type="submit">
+          Update Todo
+        </button>
       </form>
     </section>
   );
