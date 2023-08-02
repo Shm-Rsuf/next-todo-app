@@ -41,7 +41,9 @@ const AddTodoPage = () => {
           required
           className={design.input_container}
         />
-        <button type="submit">Add Todo</button>
+        <button className={design.btn_container} type="submit">
+          Add Todo
+        </button>
       </form>
     </section>
   );
