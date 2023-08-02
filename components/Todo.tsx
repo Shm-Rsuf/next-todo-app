@@ -35,7 +35,10 @@ const Todo: React.FC<TodoProps> = ({ todo }) => {
               edit
             </Link>
           </button>
-          <button onClick={() => handleDelete(_id)} className={design.editBtn}>
+          <button
+            onClick={() => handleDelete(_id)}
+            className={design.deleteBtn}
+          >
             delete
           </button>
         </div>

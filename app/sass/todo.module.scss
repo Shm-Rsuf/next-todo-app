@@ -1,5 +1,5 @@
 .section_container {
-  background-color: #6366f1;
+  background-color: #94a3b8;
   width: 100%;
   margin: 10px 0px;
   padding: 10px;
@@ -14,20 +14,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
   text-transform: uppercase;
 }
 
 .editBtn {
-  background-color: transparent;
+  background-color: #0ea5e9;
   text-transform: uppercase;
   border: 1px solid black;
   padding: 8px 16px;
   color: aliceblue;
   cursor: pointer;
+  letter-spacing: 2px;
+}
+
+.deleteBtn {
+  background-color: #f43f5e;
+  text-transform: uppercase;
+  border: 1px solid black;
+  padding: 8px 16px;
+  color: aliceblue;
+  cursor: pointer;
+  letter-spacing: 2px;
 }
 
 .link_design {
   text-decoration: none;
   color: aliceblue;
+  // background-color: #06b6d4;
 }
