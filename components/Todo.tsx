@@ -1,32 +1,26 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import design from "../app/sass/todo.module.scss";
 // import { BiEdit } from "react-icons/bi";
 // import { BsTrash } from "react-icons/bs";
 import { useTodosContext } from "@/app/hooks/useTodoContext";
-import { type } from "os";
 interface TodoProps {
   todo: any;
 }
 
 const Todo: React.FC<TodoProps> = ({ todo }) => {
   const { text, _id } = todo;
-  const router = useRouter();
   const { dispatch } = useTodosContext();
 
   /* HANDLE DELETE */
   const handleDelete = async (_id: string) => {
-    const confirmed = confirm("Are you sure?");
-    if (confirmed) {
-      const res = await fetch(`/api/todos/${_id}`, {
-        method: "DELETE",
-      });
-      const data = await res.json();
-      if (res.ok) {
-        dispatch({ type: "DELETE_TODO", payload: data });
-        // router.refresh();
-      }
+    const res = await fetch(`/api/todos/${_id}`, {
+      method: "DELETE",
+    });
+    const data = await res.json();
+    if (res.ok) {
+      dispatch({ type: "DELETE_TODO", payload: data });
+      // router.refresh();
     }
   };
 
