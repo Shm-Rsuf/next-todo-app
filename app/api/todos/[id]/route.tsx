@@ -6,17 +6,12 @@ import Todo from "../../../../models/todo.model";
 export async function GET(req: Request, { params }: { params: any }) {
   try {
     const { id } = params;
-
     if (!id) {
       return NextResponse.json({ message: "Invalid id" }, { status: 400 });
     }
-
     await connectMongoDb();
-
     const todo = await Todo.findById(id);
-    console.log(id);
-
-    return NextResponse.json({ todo }, { status: 200 });
+    return NextResponse.json(todo);
   } catch (error) {
     return NextResponse.json(
       { message: "Internal server error" },
