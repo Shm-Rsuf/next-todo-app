@@ -1,6 +1,9 @@
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import design from "../app/sass/todo.module.scss";
+import { BiEdit } from "react-icons/bi";
+import { BsTrash } from "react-icons/bs";
 interface TodoProps {
   todo: any;
 }
@@ -22,19 +25,20 @@ const Todo: React.FC<TodoProps> = ({ todo }) => {
     }
   };
 
-  /* HANDLE EDIT */
-  const handleEdit = async (id: string) => {
-    console.log(id);
-  };
-
   return (
-    <section>
-      <div>
+    <section className={design.section_container}>
+      <div className={design.todo_div}>
         <h2>{text}</h2>
-        <button onClick={() => handleEdit(_id)}>
-          <Link href={`/edit-todo/${_id}`}>Edit</Link>
-        </button>
-        <button onClick={() => handleDelete(_id)}>Delete</button>
+        <div className={design.todo_flex}>
+          <button className={design.editBtn}>
+            <Link className={design.link_design} href={`/edit-todo/${_id}`}>
+              edit
+            </Link>
+          </button>
+          <button onClick={() => handleDelete(_id)} className={design.editBtn}>
+            delete
+          </button>
+        </div>
       </div>
     </section>
   );

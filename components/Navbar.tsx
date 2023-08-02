@@ -1,10 +1,13 @@
 import Link from "next/link";
+import headerDesign from "../app/sass/header.module.scss";
 
 const Navbar = () => {
   return (
-    <header>
-      <h1>Todo applicaton</h1>
-      <Link className="bg-white p-2" href={"/add-todo"}>
+    <header className={headerDesign.design}>
+      <Link href="/" className={headerDesign.h2}>
+        todo applicaton
+      </Link>
+      <Link className={headerDesign.link} href={"/add-todo"}>
         Add Todo
       </Link>
     </header>

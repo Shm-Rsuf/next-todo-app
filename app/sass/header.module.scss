@@ -1,0 +1,33 @@
+.design {
+  background-color: #111827;
+  width: 50vw;
+  margin: 0px auto;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.h2 {
+  color: #f9fafb;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+
+.link {
+  background-color: #f9fafb;
+  text-decoration: none;
+  font-size: 20px;
+  color: #111827;
+  border: 1px solid black;
+  padding: 5px 10px;
+  transition: all 0.5s;
+  border-radius: 5px;
+}
+
+.link:hover {
+  background-color: #e5e7eb;
+}

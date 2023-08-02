@@ -1,0 +1,33 @@
+.section_container {
+  background-color: #6366f1;
+  width: 100%;
+  margin: 10px 0px;
+  padding: 10px;
+}
+
+.todo_div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  text-transform: uppercase;
+}
+
+.editBtn {
+  background-color: transparent;
+  text-transform: uppercase;
+  border: 1px solid black;
+  padding: 8px 16px;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.link_design {
+  text-decoration: none;
+  color: aliceblue;
+}

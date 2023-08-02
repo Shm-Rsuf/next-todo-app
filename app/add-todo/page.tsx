@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import design from "../sass/addTodo.module.scss";
 
 const AddTodoPage = () => {
   const [text, setText] = useState("");
@@ -29,13 +30,16 @@ const AddTodoPage = () => {
       console.log(error);
     }
   };
+
   return (
-    <section>
-      <form onSubmit={handleSubmit}>
+    <section className={design.addtodo_container}>
+      <form onSubmit={handleSubmit} className={design.form_container}>
         <input
           type="text"
           onChange={(e) => setText(e.target.value)}
           value={text}
+          required
+          className={design.input_container}
         />
         <button type="submit">Add Todo</button>
       </form>

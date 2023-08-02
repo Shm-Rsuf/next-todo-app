@@ -1,7 +1,10 @@
 "use client";
+import design from "../app/sass/todolist.module.scss";
+
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import RemoveTodo from "./RemoveTodo";
+import Todo from "./Todo";
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -31,19 +34,11 @@ const TodoList = () => {
   }, []);
 
   return (
-    <section>
+    <section className={design.section_container}>
       {todos &&
         todos.map((todo: any) => (
-          <div
-            key={todo._id}
-            style={{ backgroundColor: "gray", margin: "10px" }}
-          >
-            <h1>{todo.text}</h1>
-            {/* <Todo todo={todo} /> */}
-            <div>
-              <Link href={`/edit-todo/${todo._id}`}>edit</Link>
-              <RemoveTodo id={todo._id} />
-            </div>
+          <div key={todo._id}>
+            <Todo todo={todo} />
           </div>
         ))}
     </section>

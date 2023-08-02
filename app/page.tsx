@@ -1,9 +1,9 @@
 import TodoList from "@/components/TodoList";
-import style from "./style.module.scss";
-import AddTodo from "@/components/AddTodo";
+import design from "./sass/home.module.scss";
+
 const HomePage = () => {
   return (
-    <main style={{ color: style.primaryColor }}>
+    <main className={design.home_container}>
       <TodoList />
     </main>
   );
