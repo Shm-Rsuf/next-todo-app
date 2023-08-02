@@ -7,8 +7,8 @@ export async function POST(req: Request) {
   try {
     const { text, status } = await req.json();
     await connectMongoDb();
-    await Todo.create({ text, status });
-    return NextResponse.json({ message: "Todo is created" }, { status: 200 });
+    const postTodo = await Todo.create({ text, status });
+    return NextResponse.json(postTodo);
   } catch (error) {
     return NextResponse.json(
       { message: "Internal server error" },
@@ -25,7 +25,7 @@ export async function GET() {
     if (!todos) {
       return NextResponse.json({ message: "Todos not found" }, { status: 404 });
     }
-    return NextResponse.json(todos, { status: 200 });
+    return NextResponse.json(todos);
   } catch (error) {
     return NextResponse.json(
       { message: "Internal server error" },

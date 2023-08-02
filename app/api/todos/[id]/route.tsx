@@ -31,8 +31,12 @@ export async function PUT(req: Request, { params }: { params: any }) {
 
     await connectMongoDb();
 
-    await Todo.findByIdAndUpdate(id, { text, status }, { new: true });
-    return NextResponse.json({ message: "Todo is updated" }, { status: 200 });
+    const updateData = await Todo.findByIdAndUpdate(
+      id,
+      { text, status },
+      { new: true }
+    );
+    return NextResponse.json(updateData);
   } catch (error) {
     return NextResponse.json(
       { message: "Internal server error" },
@@ -50,8 +54,8 @@ export async function DELETE(req: Request, { params }: { params: any }) {
     }
 
     await connectMongoDb();
-    await Todo.findByIdAndDelete({ _id: id });
-    return NextResponse.json({ message: "Todo is deleted" }, { status: 200 });
+    const deleteData = await Todo.findByIdAndDelete({ _id: id });
+    return NextResponse.json(deleteData);
   } catch (error) {
     return NextResponse.json(
       { message: "Internal server error" },

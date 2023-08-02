@@ -24,7 +24,9 @@ const EditTodo = () => {
   }, [id, setTodo]);
   /* get a single todo ends */
 
-  return <EditForm todo={todo} />;
+  const { text: title, _id, status } = todo;
+
+  return <>{todo && <EditForm title={title} id={_id} status={status} />}</>;
 };
 
 export default EditTodo;
