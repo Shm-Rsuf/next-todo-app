@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { TodoContextProvider } from "./context/todoContext";
+import { NextAuthProvider } from "./Provider";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,10 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className} suppressHydrationWarning={true}>
-        <TodoContextProvider>
-          <Navbar />
-          {children}
-        </TodoContextProvider>
+        <NextAuthProvider>
+          <TodoContextProvider>
+            <Navbar />
+            {children}
+          </TodoContextProvider>
+        </NextAuthProvider>
       </body>
     </html>
   );
