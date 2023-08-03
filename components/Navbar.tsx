@@ -1,7 +1,11 @@
+"use client";
 import Link from "next/link";
 import headerDesign from "../app/sass/header.module.scss";
+import { useSession } from "next-auth/react";
 
 const Navbar = () => {
+  const { data: session } = useSession();
+  console.log({ session });
   return (
     <header className={headerDesign.design}>
       {/* <Link href="/" className={headerDesign.h2}>
@@ -11,8 +15,11 @@ const Navbar = () => {
         Add Todo
       </Link>
       <div>
-        <Link href="/signin">SignIn</Link>
-        <Link href="/">Logout</Link>
+        {session ? (
+          <Link href="/">Logout</Link>
+        ) : (
+          <Link href="/signin">SignIn</Link>
+        )}
       </div>
     </header>
   );

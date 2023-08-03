@@ -1,0 +1,20 @@
+.login_container {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 5px;
+  gap: 0.5rem;
+  font-size: 18px;
+  border-radius: 5px;
+  color: aliceblue;
+  cursor: pointer;
+  background-color: #111827;
+  transition: 0.3s ease-in-out;
+}
