@@ -29,7 +29,6 @@ const EditForm: React.FC<EditFormProps> = ({ title, id, status }) => {
     const data = await res.json();
     if (res.ok) {
       dispatch({ type: "UPDATE_TODO", payload: data });
-      // console.log("todo is upadated");
       router.push("/");
     }
   };
