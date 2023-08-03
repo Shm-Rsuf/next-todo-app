@@ -18,6 +18,7 @@ const EditForm: React.FC<EditFormProps> = ({ title, id, status }) => {
   /* HANDEL EDIT SUBMIT */
   const handelEditSubmit = async (e: any) => {
     e.preventDefault();
+
     const res = await fetch(`/api/todos/${id}`, {
       method: "PUT",
       headers: {

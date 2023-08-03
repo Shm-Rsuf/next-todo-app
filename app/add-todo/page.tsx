@@ -3,14 +3,20 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import design from "../sass/addTodo.module.scss";
+import { useSession } from "next-auth/react";
 
 const AddTodoPage = () => {
   const [text, setText] = useState("");
   const router = useRouter();
+  const { data: session } = useSession();
 
   /* SUBMIT HANDLER */
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    if (!session) {
+      router.push("/signin");
+      return;
+    }
     try {
       const res = await fetch("/api/todos", {
         method: "POST",
