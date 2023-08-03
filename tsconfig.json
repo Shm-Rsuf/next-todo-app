@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/context/todoContext.js"
+    "app/context/todoContext.js",
+    "app/edit-todo/[id]/page.jsx"
   ],
   "exclude": ["node_modules"]
 }
